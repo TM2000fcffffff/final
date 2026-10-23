@@ -107,7 +107,7 @@ const QUIZ = [
   ox(5, "STT는 글자를 음성으로 읽어 주는 기술이다.", false, "STT는 음성 → 글자, TTS가 글자 → 음성입니다."),
 ];
 
-const DAY_NAMES = { 1: "Claude Code · 컨텍스트", 2: "배포 · Supabase · 결제 · MCP · 영상", 3: "스킬", 4: "pandas · RAG · 로컬 LLM · 에이전트", 5: "데스크톱 앱 · 자비스" };
+const DAY_NAMES = { 1: "Claude Code · 컨텍스트", 2: "배포 · MCP · Supabase · 결제 · 영상", 3: "스킬", 4: "pandas · RAG · 로컬 LLM · 에이전트", 5: "데스크톱 앱 · 자비스" };
 
 const COMMENTS = [
   { min: 100, icon: "🏆", title: "완벽해요!", text: "모든 개념을 정확히 이해했어요. 이제 배운 내용으로 나만의 프로젝트를 Claude Code와 함께 만들어 보세요." },

@@ -27,9 +27,9 @@
       <p class="sidebar-title">목차</p>
       <ul>
         <li><a href="#day1" class="nav-link" title="Claude Code · 컨텍스트 · 화면 조작"><span class="badge">💬</span>DAY 1</a></li>
-        <li><a href="#day2" class="nav-link" title="배포 · Supabase · 결제 · MCP · 영상"><span class="badge">🚀</span>DAY 2</a></li>
+        <li><a href="#day2" class="nav-link" title="배포 · MCP · Supabase · 결제 · 영상"><span class="badge">🚀</span>DAY 2</a></li>
         <li><a href="#day3" class="nav-link" title="스킬 생성"><span class="badge">🧩</span>DAY 3</a></li>
-        <li><a href="#day4" class="nav-link" title="pandas · RAG · 로컬 LLM · 업스테이지 · 에이전트"><span class="badge">📊</span>DAY 4</a></li>
+        <li><a href="#day4" class="nav-link" title="크롤링 · pandas · RAG · 로컬 LLM · 업스테이지 · 에이전트"><span class="badge">📊</span>DAY 4</a></li>
         <li><a href="#day5" class="nav-link" title="데스크톱 앱 · AI 자비스 · UI/UX"><span class="badge">🖥️</span>DAY 5</a></li>
         <li><a href="#quiz" class="nav-link" title="학습 확인 퀴즈"><span class="badge">✏️</span>QUIZ</a></li>
       </ul>
@@ -47,9 +47,9 @@
         <p class="hero-desc">홈페이지 제작부터 배포, 결제, 스킬, RAG 챗봇, 데스크톱 앱까지 —<br />매일 배운 내용을 한 곳에 정리했습니다.</p>
         <div class="day-cards">
           <a href="#day1" class="day-card"><span>DAY 1</span><strong>Claude Code</strong><em>컨텍스트 · Chrome · Computer Use</em></a>
-          <a href="#day2" class="day-card"><span>DAY 2</span><strong>배포 · 결제</strong><em>Vercel · Supabase · Toss · MCP · 영상</em></a>
+          <a href="#day2" class="day-card"><span>DAY 2</span><strong>배포 · 결제</strong><em>Vercel · MCP · Supabase · Toss · 영상</em></a>
           <a href="#day3" class="day-card"><span>DAY 3</span><strong>Skills</strong><em>SKILL.md</em></a>
-          <a href="#day4" class="day-card"><span>DAY 4</span><strong>RAG 챗봇</strong><em>pandas · 로컬 LLM · 업스테이지 · 에이전트</em></a>
+          <a href="#day4" class="day-card"><span>DAY 4</span><strong>RAG 챗봇</strong><em>크롤링 · pandas · 로컬 LLM · 에이전트</em></a>
           <a href="#day5" class="day-card"><span>DAY 5</span><strong>Desktop App</strong><em>음성 · 카메라 · 자비스 · UI/UX</em></a>
         </div>
       </section>
@@ -59,7 +59,7 @@
         <div class="day-head">
           <span class="day-label">DAY 1</span>
           <h2>Claude Code와 컨텍스트 이해하기</h2>
-          <p>Claude Code가 어떻게 일하는지, AI가 한 번에 기억하는 범위인 <b>컨텍스트</b>를 어떻게 관리하는지, <b>Claude in Chrome·Computer Use</b>로 화면을 직접 다루는 방법을 배우고, 바이브 코딩으로 홈페이지를 만들었습니다.</p>
+          <p>첫날은 AI 코딩 도구 <b>Claude Code</b>와 친해지는 날입니다. Claude Code가 어떻게 일하는지, AI가 한 번에 기억하는 범위인 <b>컨텍스트</b>는 어떻게 관리하는지, 화면까지 다루는 <b>Claude in Chrome·Computer Use</b>는 무엇인지 알아보고, 말로 설명해서 홈페이지를 만드는 <b>바이브 코딩</b>을 직접 해 봅니다.</p>
         </div>
 
         <h3>Claude Code란?</h3>
@@ -149,6 +149,27 @@
           </article>
         </div>
 
+        <h3>자주 쓰는 Claude Code 명령어</h3>
+        <div class="table-wrap">
+          <table class="cmd-table">
+            <thead><tr><th>명령어</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr class="searchable"><td><code>/init</code></td><td>프로젝트를 분석해 <code>CLAUDE.md</code> 생성</td></tr>
+              <tr class="searchable"><td><code>/clear</code></td><td>대화 내용 초기화</td></tr>
+              <tr class="searchable"><td><code>/compact</code></td><td>대화를 요약해 컨텍스트 절약</td></tr>
+              <tr class="searchable"><td><code>/context</code></td><td>컨텍스트 사용량 확인</td></tr>
+              <tr class="searchable"><td><code>/model</code></td><td>사용할 모델 변경</td></tr>
+              <tr class="searchable"><td><code>/memory</code></td><td>메모리(CLAUDE.md) 편집</td></tr>
+              <tr class="searchable"><td><code>/cost</code></td><td>현재 세션 토큰·비용 확인</td></tr>
+              <tr class="searchable"><td><code>/mcp</code></td><td>연결된 MCP 서버 관리</td></tr>
+              <tr class="searchable"><td><code>@파일명</code></td><td>특정 파일을 대화에 첨부</td></tr>
+              <tr class="searchable"><td><code>!명령</code></td><td>셸 명령 바로 실행</td></tr>
+              <tr class="searchable"><td><kbd>Shift</kbd>+<kbd>Tab</kbd></td><td>Plan 모드 / 자동 수락 모드 전환</td></tr>
+              <tr class="searchable"><td><kbd>Esc</kbd> <kbd>Esc</kbd></td><td>이전 메시지로 되돌아가기</td></tr>
+              <tr class="searchable"><td><code>claude -c</code></td><td>마지막 대화 이어서 시작</td></tr>
+            </tbody>
+          </table>
+        </div>
         <h3>AI가 화면을 직접 다루는 방법</h3>
         <article class="card searchable">
           <h4>파일만이 아니라 "화면"도 다룬다</h4>
@@ -257,36 +278,16 @@
           </div>
         </article>
 
-        <h3>자주 쓰는 Claude Code 명령어</h3>
-        <div class="table-wrap">
-          <table class="cmd-table">
-            <thead><tr><th>명령어</th><th>설명</th></tr></thead>
-            <tbody>
-              <tr class="searchable"><td><code>/init</code></td><td>프로젝트를 분석해 <code>CLAUDE.md</code> 생성</td></tr>
-              <tr class="searchable"><td><code>/clear</code></td><td>대화 내용 초기화</td></tr>
-              <tr class="searchable"><td><code>/compact</code></td><td>대화를 요약해 컨텍스트 절약</td></tr>
-              <tr class="searchable"><td><code>/context</code></td><td>컨텍스트 사용량 확인</td></tr>
-              <tr class="searchable"><td><code>/model</code></td><td>사용할 모델 변경</td></tr>
-              <tr class="searchable"><td><code>/memory</code></td><td>메모리(CLAUDE.md) 편집</td></tr>
-              <tr class="searchable"><td><code>/cost</code></td><td>현재 세션 토큰·비용 확인</td></tr>
-              <tr class="searchable"><td><code>/mcp</code></td><td>연결된 MCP 서버 관리</td></tr>
-              <tr class="searchable"><td><code>@파일명</code></td><td>특정 파일을 대화에 첨부</td></tr>
-              <tr class="searchable"><td><code>!명령</code></td><td>셸 명령 바로 실행</td></tr>
-              <tr class="searchable"><td><kbd>Shift</kbd>+<kbd>Tab</kbd></td><td>Plan 모드 / 자동 수락 모드 전환</td></tr>
-              <tr class="searchable"><td><kbd>Esc</kbd> <kbd>Esc</kbd></td><td>이전 메시지로 되돌아가기</td></tr>
-              <tr class="searchable"><td><code>claude -c</code></td><td>마지막 대화 이어서 시작</td></tr>
-            </tbody>
-          </table>
-        </div>
         <label class="check"><input type="checkbox" data-check="day1" /> DAY 1 복습 완료</label>
+        <a class="next-day" href="#day2"><span>다음 · DAY 2</span>내 PC에 만든 사이트를 인터넷에 올리고, 로그인·결제를 붙여 봅니다 →</a>
       </section>
 
       <!-- DAY 2 -->
       <section class="day" id="day2" data-day="2">
         <div class="day-head">
           <span class="day-label">DAY 2</span>
-          <h2>배포 · Supabase · 결제 연동 · MCP · 영상 제작</h2>
-          <p>만든 사이트를 GitHub와 Vercel로 배포하는 방법, 서버 없이 DB·로그인을 쓰는 Supabase, 결제를 받아 서버에서 승인하는 원리, AI에 외부 도구를 연결하는 MCP, 그리고 코드로 홍보영상을 만드는 방법을 배웠습니다. 각 단계를 Claude Code로 어떻게 진행하는지 함께 정리했습니다.</p>
+          <h2>배포 · MCP · Supabase · 결제 · 영상 제작</h2>
+          <p>DAY 1에서 내 PC에 만든 사이트를 오늘은 <b>인터넷에 올리고(배포)</b>, 진짜 서비스처럼 기능을 붙입니다. 외부 도구를 연결하는 <b>MCP</b>, 로그인·데이터 저장을 맡는 <b>Supabase</b>, 돈을 받는 <b>토스 결제</b>를 차례로 붙이고, 마지막으로 완성한 앱을 알리는 <b>홍보영상</b>까지 코드로 만듭니다.</p>
         </div>
 
         <h3>배포 개념 먼저</h3>
@@ -367,50 +368,8 @@
         </ol>
         <p class="note">👉 실제 배포 사례는 아래 <b>"그거 언제 했더라?"</b> 예시를 참고하세요.</p>
 
-        <h3>결제 개념 먼저</h3>
-        <div class="glossary">
-          <div class="term searchable"><b>PG사</b><p>카드사·은행과 쇼핑몰 사이에서 결제를 대신 처리해 주는 회사 (토스페이먼츠)</p></div>
-          <div class="term searchable"><b>클라이언트 키</b><p>브라우저에서 결제창을 띄울 때 쓰는 공개 키. 누구에게 보여도 괜찮음</p></div>
-          <div class="term searchable"><b>시크릿 키</b><p>결제를 최종 확정(승인)할 때 쓰는 비밀 키. <b>서버에만</b> 두어야 함</p></div>
-          <div class="term searchable"><b>결제 승인</b><p>손님이 결제창에서 인증한 뒤, 서버가 금액을 확인하고 "이 결제 확정"을 요청하는 단계</p></div>
-          <div class="term searchable"><b>테스트 모드</b><p><code>test_</code> 키로 결제하면 실제 돈이 나가지 않음. 개발 중엔 항상 테스트 키</p></div>
-        </div>
-        <p class="note">왜 승인을 서버에서 할까요? 브라우저 코드는 누구나 고칠 수 있어서, 금액을 몰래 바꿔 결제할 수 있기 때문입니다. 서버가 DB 가격으로 금액을 다시 확인해야 안전합니다.</p>
-
-        <h3>결제 흐름</h3>
-        <div class="flow">
-          <div class="flow-step">🛒<b>결제 위젯</b><small>클라이언트 키</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">🧾<b>주문 생성</b><small>서버가 금액 계산</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">💳<b>결제 요청</b><small>requestPayment</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">↩️<b>successUrl</b><small>paymentKey · orderId · amount</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">✅<b>결제 승인</b><small>Edge Function · 시크릿 키</small></div>
-        </div>
-
+        <h3>🔌 MCP: AI에 도구 연결하기</h3>
         <div class="grid-2">
-          <article class="card searchable">
-            <h4>🖥️ 브라우저가 하는 일: 결제 요청</h4>
-            <ol>
-              <li><b>클라이언트 키</b>로 결제 위젯(결제 수단 선택 화면)을 띄움</li>
-              <li>주문 금액을 위젯에 알려 줌</li>
-              <li>손님이 결제 버튼을 누르면 토스 결제창이 열림</li>
-              <li>인증이 끝나면 <b>성공 페이지</b>로 돌아오며 결제 번호·주문 번호·금액을 받음</li>
-            </ol>
-            <p>이 단계까지는 아직 돈이 빠져나가지 않습니다.</p>
-          </article>
-          <article class="card searchable">
-            <h4>🔒 서버가 하는 일: 결제 승인</h4>
-            <ol>
-              <li>성공 페이지가 받은 정보를 서버로 보냄</li>
-              <li>서버가 DB의 주문 금액과 <b>같은지 확인</b></li>
-              <li><b>시크릿 키</b>로 토스에 "이 결제 확정해 줘"라고 요청</li>
-              <li>승인되면 주문을 '결제 완료'로 바꿈</li>
-            </ol>
-            <p>이 승인 요청이 성공해야 실제로 결제가 끝납니다.</p>
-          </article>
           <article class="card searchable">
             <h4>MCP (Model Context Protocol)</h4>
             <p>AI 모델이 외부 도구·데이터에 접근하도록 연결하는 <b>표준 규격</b>입니다. "AI용 USB-C"라고 생각하면 쉽습니다.</p>
@@ -426,48 +385,6 @@
             </ul>
           </article>
         </div>
-
-        <h3>🤖 Claude Code로 결제 연동하기</h3>
-        <ol class="steps">
-          <li class="step searchable">
-            <span class="step-num">1</span>
-            <div>
-              <b>MCP로 최신 문서부터 연결</b>
-              <p>결제 API는 자주 바뀌므로, 공식 문서를 읽을 수 있는 MCP 서버를 먼저 연결합니다.</p>
-              <p class="prompt">"토스페이먼츠 연동 가이드 MCP를 이 프로젝트에 연결해 줘."</p>
-            </div>
-          </li>
-          <li class="step searchable">
-            <span class="step-num">2</span>
-            <div>
-              <b>기획을 PRD로 정리하게 하기</b>
-              <p>바로 코드부터 짜지 말고, 만들 화면과 기능을 문서(PRD.md)로 먼저 합의합니다.</p>
-              <p class="prompt">"의류 쇼핑몰을 만들 거야. 상품 목록, 장바구니, 회원가입, 토스 결제, 주문 내역 화면이 필요해. PRD.md로 기획서부터 써 줘."</p>
-            </div>
-          </li>
-          <li class="step searchable">
-            <span class="step-num">3</span>
-            <div>
-              <b>결제위젯 연동 요청</b>
-              <p class="prompt">"토스페이먼츠 결제위젯 v2로 결제 페이지를 만들어 줘. 최신 문서는 MCP로 확인하고, 승인은 서버에서 하도록 해."</p>
-            </div>
-          </li>
-          <li class="step searchable">
-            <span class="step-num">4</span>
-            <div>
-              <b>키는 내가 직접 넣기</b>
-              <p>클라이언트 키는 코드에, <b>시크릿 키는 서버 설정(환경 변수·Secrets)에 직접</b> 넣습니다. 시크릿 키를 채팅창에 붙여 넣지 않습니다.</p>
-            </div>
-          </li>
-          <li class="step searchable">
-            <span class="step-num">5</span>
-            <div>
-              <b>테스트 결제로 확인</b>
-              <p>테스트 키로 결제해 보고, 성공·실패·취소 화면이 모두 잘 동작하는지 확인을 부탁합니다.</p>
-              <p class="prompt">"결제 실패하거나 결제창을 닫았을 때 주문이 어떻게 처리되는지 확인해 줘."</p>
-            </div>
-          </li>
-        </ol>
 
         <h3>🗄️ Supabase 연동하기</h3>
         <article class="card searchable">
@@ -533,7 +450,95 @@
             </div>
           </li>
         </ol>
-        <p class="note">👉 아래 실습 예시의 <b>LAYERED 쇼핑몰</b>(상품·주문·결제)과 <b>"그거 언제 했더라?"</b>(Google 로그인·동기화·Realtime 룰렛)가 모두 Supabase를 썼습니다.</p>
+        <p class="note">👉 아래 실습 예시의 <b>LAYERED 쇼핑몰</b>(상품·주문·결제)과 <b>"그거 언제 했더라?"</b>(Google 로그인·기록 저장·실시간 룰렛)가 모두 Supabase를 썼습니다.</p>
+
+        <h3>결제 개념 먼저</h3>
+        <div class="glossary">
+          <div class="term searchable"><b>PG사</b><p>카드사·은행과 쇼핑몰 사이에서 결제를 대신 처리해 주는 회사 (토스페이먼츠)</p></div>
+          <div class="term searchable"><b>클라이언트 키</b><p>브라우저에서 결제창을 띄울 때 쓰는 공개 키. 누구에게 보여도 괜찮음</p></div>
+          <div class="term searchable"><b>시크릿 키</b><p>결제를 최종 확정(승인)할 때 쓰는 비밀 키. <b>서버에만</b> 두어야 함</p></div>
+          <div class="term searchable"><b>결제 승인</b><p>손님이 결제창에서 인증한 뒤, 서버가 금액을 확인하고 "이 결제 확정"을 요청하는 단계</p></div>
+          <div class="term searchable"><b>테스트 모드</b><p><code>test_</code> 키로 결제하면 실제 돈이 나가지 않음. 개발 중엔 항상 테스트 키</p></div>
+        </div>
+        <p class="note">왜 승인을 서버에서 할까요? 브라우저 코드는 누구나 고칠 수 있어서, 금액을 몰래 바꿔 결제할 수 있기 때문입니다. 서버가 DB 가격으로 금액을 다시 확인해야 안전합니다.</p>
+
+        <h3>결제 흐름</h3>
+        <div class="flow">
+          <div class="flow-step">🛒<b>결제 위젯</b><small>클라이언트 키</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🧾<b>주문 생성</b><small>서버가 금액 계산</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">💳<b>결제 요청</b><small>requestPayment</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">↩️<b>successUrl</b><small>paymentKey · orderId · amount</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">✅<b>결제 승인</b><small>Edge Function · 시크릿 키</small></div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card searchable">
+            <h4>🖥️ 브라우저가 하는 일: 결제 요청</h4>
+            <ol>
+              <li><b>클라이언트 키</b>로 결제 위젯(결제 수단 선택 화면)을 띄움</li>
+              <li>주문 금액을 위젯에 알려 줌</li>
+              <li>손님이 결제 버튼을 누르면 토스 결제창이 열림</li>
+              <li>인증이 끝나면 <b>성공 페이지</b>로 돌아오며 결제 번호·주문 번호·금액을 받음</li>
+            </ol>
+            <p>이 단계까지는 아직 돈이 빠져나가지 않습니다.</p>
+          </article>
+          <article class="card searchable">
+            <h4>🔒 서버가 하는 일: 결제 승인</h4>
+            <ol>
+              <li>성공 페이지가 받은 정보를 서버로 보냄</li>
+              <li>서버가 DB의 주문 금액과 <b>같은지 확인</b></li>
+              <li><b>시크릿 키</b>로 토스에 "이 결제 확정해 줘"라고 요청</li>
+              <li>승인되면 주문을 '결제 완료'로 바꿈</li>
+            </ol>
+            <p>이 승인 요청이 성공해야 실제로 결제가 끝납니다.</p>
+          </article>
+        </div>
+
+        <h3>🤖 Claude Code로 결제 연동하기</h3>
+        <ol class="steps">
+          <li class="step searchable">
+            <span class="step-num">1</span>
+            <div>
+              <b>MCP로 최신 문서부터 연결</b>
+              <p>결제 API는 자주 바뀌므로, 공식 문서를 읽을 수 있는 MCP 서버를 먼저 연결합니다.</p>
+              <p class="prompt">"토스페이먼츠 연동 가이드 MCP를 이 프로젝트에 연결해 줘."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">2</span>
+            <div>
+              <b>기획을 PRD로 정리하게 하기</b>
+              <p>바로 코드부터 짜지 말고, 만들 화면과 기능을 문서(PRD.md)로 먼저 합의합니다.</p>
+              <p class="prompt">"의류 쇼핑몰을 만들 거야. 상품 목록, 장바구니, 회원가입, 토스 결제, 주문 내역 화면이 필요해. PRD.md로 기획서부터 써 줘."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">3</span>
+            <div>
+              <b>결제위젯 연동 요청</b>
+              <p class="prompt">"토스페이먼츠 결제위젯 v2로 결제 페이지를 만들어 줘. 최신 문서는 MCP로 확인하고, 승인은 서버에서 하도록 해."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">4</span>
+            <div>
+              <b>키는 내가 직접 넣기</b>
+              <p>클라이언트 키는 코드에, <b>시크릿 키는 서버 설정(환경 변수·Secrets)에 직접</b> 넣습니다. 시크릿 키를 채팅창에 붙여 넣지 않습니다.</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">5</span>
+            <div>
+              <b>테스트 결제로 확인</b>
+              <p>테스트 키로 결제해 보고, 성공·실패·취소 화면이 모두 잘 동작하는지 확인을 부탁합니다.</p>
+              <p class="prompt">"결제 실패하거나 결제창을 닫았을 때 주문이 어떻게 처리되는지 확인해 줘."</p>
+            </div>
+          </li>
+        </ol>
 
         <h3>🎬 코드로 홍보영상 만들기</h3>
         <article class="card searchable">
@@ -605,49 +610,6 @@
         <article class="card project searchable">
           <div class="project-head">
             <div>
-              <span class="project-path">d_2/test/promo</span>
-              <h4>"그거 언제 했더라?" 20초 홍보영상</h4>
-            </div>
-            <div><span class="pill">Canvas</span><span class="pill">1080p 60fps</span><span class="pill">MP4</span></div>
-          </div>
-          <p>아래 기록장 앱을 소개하는 20초 영상을 웹 페이지 하나로 만들었습니다. 페이지에서 재생·구간 이동으로 확인하고, 버튼 하나로 MP4·썸네일·소리 파일을 내보냅니다.</p>
-          <div class="video-wrap">
-            <video controls playsinline preload="metadata" src="assets/promo.mp4#t=0.5" aria-label="그거 언제 했더라? 20초 홍보영상">
-              브라우저가 영상 재생을 지원하지 않습니다. <a class="link" href="assets/promo.mp4">영상 파일 받기</a>
-            </video>
-          </div>
-          <p class="note">🎬 실제로 만든 영상입니다 (1080p · 60fps · 약 20초 · 41MB). 재생 버튼을 누르면 불러옵니다.</p>
-          <p class="sub-title">타임라인</p>
-          <div class="timeline">
-            <div style="flex:2"><b>0초</b>질문</div>
-            <div style="flex:2.4"><b>2초</b>빠른 컷 · 한 문장</div>
-            <div style="flex:2.9"><b>4.4초</b>휴대폰 등장</div>
-            <div style="flex:3"><b>7.3초</b>했어요 기록</div>
-            <div style="flex:2"><b>10.3초</b>색 · 정렬</div>
-            <div style="flex:2.3"><b>12.3초</b>달력</div>
-            <div style="flex:2.7"><b>14.6초</b>룰렛</div>
-            <div style="flex:2.5"><b>17.3초</b>마무리</div>
-          </div>
-          <div class="grid-3">
-            <div class="mini">
-              <b>시각만 알면 그 장면이 나옴</b>
-              <p>"t초의 장면 그리기" 하나로 모든 장면을 그려서, 미리보기와 내보내기 결과가 똑같습니다.</p>
-            </div>
-            <div class="mini">
-              <b>무료 재료 활용</b>
-              <p>3D 이모지(Microsoft Fluent Emoji)와 Pretendard 글꼴을 내려받아 사용했습니다. 둘 다 무료 라이선스입니다.</p>
-            </div>
-            <div class="mini">
-              <b>브라우저에서 바로 인코딩</b>
-              <p>별도 영상 프로그램 없이 Chrome의 인코딩 기능으로 MP4를 만들었습니다.</p>
-            </div>
-          </div>
-        </article>
-
-        <h3>📎 내 실습 예시 (결제 · 배포)</h3>
-        <article class="card project searchable">
-          <div class="project-head">
-            <div>
               <span class="project-path">d_2/tosspayments</span>
               <h4>LAYERED 의류 쇼핑몰</h4>
             </div>
@@ -694,7 +656,51 @@
             </div>
           </div>
         </article>
+
+        <article class="card project searchable">
+          <div class="project-head">
+            <div>
+              <span class="project-path">d_2/test/promo</span>
+              <h4>"그거 언제 했더라?" 20초 홍보영상</h4>
+            </div>
+            <div><span class="pill">Canvas</span><span class="pill">1080p 60fps</span><span class="pill">MP4</span></div>
+          </div>
+          <p>아래 기록장 앱을 소개하는 20초 영상을 웹 페이지 하나로 만들었습니다. 페이지에서 재생·구간 이동으로 확인하고, 버튼 하나로 MP4·썸네일·소리 파일을 내보냅니다.</p>
+          <div class="video-wrap">
+            <video controls playsinline preload="metadata" src="assets/promo.mp4#t=0.5" aria-label="그거 언제 했더라? 20초 홍보영상">
+              브라우저가 영상 재생을 지원하지 않습니다. <a class="link" href="assets/promo.mp4">영상 파일 받기</a>
+            </video>
+          </div>
+          <p class="note">🎬 실제로 만든 영상입니다 (1080p · 60fps · 약 20초 · 41MB). 재생 버튼을 누르면 불러옵니다.</p>
+          <p class="sub-title">타임라인</p>
+          <div class="timeline">
+            <div style="flex:2"><b>0초</b>질문</div>
+            <div style="flex:2.4"><b>2초</b>빠른 컷 · 한 문장</div>
+            <div style="flex:2.9"><b>4.4초</b>휴대폰 등장</div>
+            <div style="flex:3"><b>7.3초</b>했어요 기록</div>
+            <div style="flex:2"><b>10.3초</b>색 · 정렬</div>
+            <div style="flex:2.3"><b>12.3초</b>달력</div>
+            <div style="flex:2.7"><b>14.6초</b>룰렛</div>
+            <div style="flex:2.5"><b>17.3초</b>마무리</div>
+          </div>
+          <div class="grid-3">
+            <div class="mini">
+              <b>시각만 알면 그 장면이 나옴</b>
+              <p>"t초의 장면 그리기" 하나로 모든 장면을 그려서, 미리보기와 내보내기 결과가 똑같습니다.</p>
+            </div>
+            <div class="mini">
+              <b>무료 재료 활용</b>
+              <p>3D 이모지(Microsoft Fluent Emoji)와 Pretendard 글꼴을 내려받아 사용했습니다. 둘 다 무료 라이선스입니다.</p>
+            </div>
+            <div class="mini">
+              <b>브라우저에서 바로 인코딩</b>
+              <p>별도 영상 프로그램 없이 Chrome의 인코딩 기능으로 MP4를 만들었습니다.</p>
+            </div>
+          </div>
+        </article>
+
         <label class="check"><input type="checkbox" data-check="day2" /> DAY 2 복습 완료</label>
+        <a class="next-day" href="#day3"><span>다음 · DAY 3</span>자주 하는 작업을 스킬로 저장해, 다음부터는 한마디로 끝내 봅니다 →</a>
       </section>
 
       <!-- DAY 3 -->
@@ -702,7 +708,7 @@
         <div class="day-head">
           <span class="day-label">DAY 3</span>
           <h2>스킬(Skill) 생성하기</h2>
-          <p>반복되는 작업 방법을 <code>SKILL.md</code>로 묶어 두면 Claude가 필요할 때 알아서 꺼내 씁니다. 스킬이 무엇인지, 비슷한 기능들과 어떻게 다른지, Claude Code로 어떻게 만드는지 정리했습니다.</p>
+          <p>DAY 1~2에서 비슷한 요청을 여러 번 반복했다면, 이제 그 방법을 <b>스킬</b>로 저장할 차례입니다. 작업 순서를 <code>SKILL.md</code>로 묶어 두면 Claude가 필요할 때 알아서 꺼내 씁니다. 직접 만드는 방법과 남이 만든 스킬을 찾아 쓰는 방법을 함께 봅니다.</p>
         </div>
 
         <h3>스킬 개념 먼저</h3>
@@ -804,6 +810,19 @@
           </li>
         </ol>
 
+        <h3>🌍 남이 만든 스킬 찾아 쓰기: skills.sh</h3>
+        <article class="card searchable">
+          <h4>스킬 앱스토어 같은 사이트</h4>
+          <p><a class="link" href="https://skills.sh" target="_blank" rel="noopener">skills.sh ↗</a>는 여러 사람과 회사가 만든 AI 에이전트용 스킬을 모아 둔 <b>스킬 디렉터리</b>입니다. 많이 설치된 순서로 순위(리더보드)를 보여 주고, 마음에 드는 스킬은 명령 한 줄로 내 프로젝트에 설치할 수 있습니다. Claude Code를 포함한 여러 AI 에이전트에서 쓸 수 있습니다.</p>
+          <ul>
+            <li><b>찾기</b> — 사이트에서 둘러보거나, 직접 만든 실습 예시의 <b>find-skills</b> 스킬로 "○○하는 스킬 있어?"라고 물어보기</li>
+            <li><b>설치</b> — 스킬 페이지에 있는 <code>npx skills add …</code> 명령을 실행하면 내 프로젝트에 스킬 폴더가 생김</li>
+            <li><b>사용</b> — 설치한 뒤에는 내가 만든 스킬처럼 <code>/스킬이름</code>이나 말로 요청해서 사용</li>
+          </ul>
+          <p class="prompt">"skills.sh에서 프론트엔드 디자인 관련 스킬을 찾아서 이 프로젝트에 설치해 줘."</p>
+          <p class="note">💡 남이 만든 스킬도 결국 내 PC에서 실행되는 지침과 코드입니다. 설치 전에 어떤 일을 하는 스킬인지, 믿을 만한 곳에서 만든 것인지 확인하세요.</p>
+        </article>
+
         <h3>📎 내 실습 예시 <small class="h-sub">d_3/skills_test</small></h3>
         <div class="grid-3 skills">
           <article class="card searchable">
@@ -823,29 +842,50 @@
           </article>
         </div>
 
-        <h3>🌍 남이 만든 스킬 찾아 쓰기: skills.sh</h3>
-        <article class="card searchable">
-          <h4>스킬 앱스토어 같은 사이트</h4>
-          <p><a class="link" href="https://skills.sh" target="_blank" rel="noopener">skills.sh ↗</a>는 여러 사람과 회사가 만든 AI 에이전트용 스킬을 모아 둔 <b>스킬 디렉터리</b>입니다. 많이 설치된 순서로 순위(리더보드)를 보여 주고, 마음에 드는 스킬은 명령 한 줄로 내 프로젝트에 설치할 수 있습니다. Claude Code를 포함한 여러 AI 에이전트에서 쓸 수 있습니다.</p>
-          <ul>
-            <li><b>찾기</b> — 사이트에서 둘러보거나, 직접 만든 실습 예시의 <b>find-skills</b> 스킬로 "○○하는 스킬 있어?"라고 물어보기</li>
-            <li><b>설치</b> — 스킬 페이지에 있는 <code>npx skills add …</code> 명령을 실행하면 내 프로젝트에 스킬 폴더가 생김</li>
-            <li><b>사용</b> — 설치한 뒤에는 내가 만든 스킬처럼 <code>/스킬이름</code>이나 말로 요청해서 사용</li>
-          </ul>
-          <p class="prompt">"skills.sh에서 프론트엔드 디자인 관련 스킬을 찾아서 이 프로젝트에 설치해 줘."</p>
-          <p class="note">💡 남이 만든 스킬도 결국 내 PC에서 실행되는 지침과 코드입니다. 설치 전에 어떤 일을 하는 스킬인지, 믿을 만한 곳에서 만든 것인지 확인하세요.</p>
-        </article>
-
         <label class="check"><input type="checkbox" data-check="day3" /> DAY 3 복습 완료</label>
+        <a class="next-day" href="#day4"><span>다음 · DAY 4</span>데이터를 모으고 다듬어, 내 자료로 답하는 AI 챗봇을 만들어 봅니다 →</a>
       </section>
 
       <!-- DAY 4 -->
       <section class="day" id="day4" data-day="4">
         <div class="day-head">
           <span class="day-label">DAY 4</span>
-          <h2>pandas · RAG 챗봇 · 로컬 LLM · 업스테이지 · 에이전트</h2>
-          <p>pandas로 데이터를 다듬고, RAG로 내 데이터에 근거해 답하는 챗봇을 만드는 방법, 내 PC에서 돌아가는 로컬 LLM과 업스테이지 API를 쓰는 방법, 그리고 도구를 써서 스스로 일을 끝내는 <b>에이전트</b>의 개념을 배웠습니다.</p>
+          <h2>크롤링 · pandas · RAG 챗봇 · 로컬 LLM · 업스테이지 · 에이전트</h2>
+          <p>DAY 3의 crawling 스킬처럼 웹에서 <b>데이터를 모으는 것</b>부터 시작합니다. 모은 데이터를 <b>pandas</b>로 다듬고, 그 자료에 근거해 답하는 <b>RAG 챗봇</b>을 만든 뒤, 챗봇을 내 PC(<b>로컬 LLM</b>)나 <b>업스테이지</b>로 돌려 봅니다. 마지막엔 도구를 써서 스스로 일하는 <b>에이전트</b>로 넓힙니다.</p>
         </div>
+
+        <h3>🕸️ 크롤링(Crawling)이란?</h3>
+        <article class="card searchable">
+          <h4>웹에 흩어진 정보를 자동으로 모아 표로 만들기</h4>
+          <p>여러 웹페이지를 돌아다니며 필요한 정보(제목, 날짜, 금액 등)를 <b>자동으로 모아 오는 것</b>을 크롤링이라고 합니다. 사람이 하나씩 복사해 붙이던 일을 프로그램이 대신해서, 결과를 엑셀 같은 표로 저장합니다. 이렇게 모은 데이터는 pandas로 다듬고, 그래프나 RAG 챗봇의 재료로 씁니다.</p>
+        </article>
+        <div class="flow">
+          <div class="flow-step">🎯<b>주제 정하기</b><small>무엇을 · 언제까지</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🔎<b>출처 찾기</b><small>공식 API · 공개 게시판</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🤖<b>자동 수집</b><small>크롤러 실행</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">📊<b>엑셀 저장</b><small>표 · 그래프</small></div>
+        </div>
+        <div class="grid-2">
+          <article class="card searchable">
+            <h4>🤖 Claude Code로 크롤링하기</h4>
+            <p>무엇을 모을지, 기간과 항목, 저장 형태만 말하면 출처 찾기부터 엑셀 저장까지 맡길 수 있습니다.</p>
+            <p class="prompt">"지난주 올라온 서울 시간강사 구인 공고를 모아서 엑셀로 정리해 줘. 학교, 과목, 마감일이 보이게 해 줘."</p>
+            <p class="prompt">"이번 주 화제가 된 AI 논문을 분야별로 모아서 엑셀과 그래프로 만들어 줘."</p>
+          </article>
+          <article class="card searchable">
+            <h4>🚦 지켜야 할 예절</h4>
+            <ul>
+              <li>공식 API가 있으면 그것부터 사용</li>
+              <li>사이트의 이용 약관과 수집 허용 범위 확인</li>
+              <li>너무 빠르게, 너무 많이 요청해서 서버에 부담 주지 않기</li>
+              <li>개인정보는 모으지 않기</li>
+            </ul>
+          </article>
+        </div>
+        <p class="note">👉 반복해서 쓰는 크롤링 절차는 <b>crawling 스킬</b>로 만들어 두면, "○○ 데이터 모아서 엑셀로"라고만 말해도 같은 순서로 진행됩니다. (DAY 3 스킬 참고)</p>
 
         <h3>개념 먼저</h3>
         <div class="glossary">
@@ -1103,6 +1143,18 @@
         </div>
         <p class="note">RAG의 "문서 검색"도 에이전트가 쓸 수 있는 도구 중 하나입니다. RAG 챗봇에 계산·저장 같은 도구를 더하면 에이전트로 넓힐 수 있습니다.</p>
 
+        <h3>👥 서브 에이전트(Sub-agent)란?</h3>
+        <article class="card searchable">
+          <h4>팀장 AI가 일을 나눠 맡기는 도우미 AI</h4>
+          <p>큰 일을 혼자 다 하면 컨텍스트(작업 기억)가 금방 가득 찹니다. 그래서 Claude Code는 일부 일을 <b>서브 에이전트</b>에게 맡깁니다. 서브 에이전트는 <b>자기만의 작업 공간</b>에서 일하고, 끝나면 <b>결과만 요약해서</b> 돌려줍니다.</p>
+          <ul>
+            <li><b>역할 나누기</b> — "조사 담당", "디자인 검토 담당", "테스트 담당"처럼 전문 역할을 줄 수 있음</li>
+            <li><b>동시에 일하기</b> — 서로 상관없는 일은 여러 서브 에이전트가 한꺼번에 진행</li>
+            <li><b>기억 아끼기</b> — 긴 조사 내용은 서브 에이전트 쪽에 남고, 메인 대화엔 결론만 옴</li>
+          </ul>
+          <p class="prompt">"서브 에이전트를 써서 data 폴더의 엑셀 파일 3개를 각각 분석하고, 결과만 모아서 알려 줘."</p>
+        </article>
+
         <h3>🤖 Claude Code로 에이전트 만들기</h3>
         <ol class="steps">
           <li class="step searchable">
@@ -1180,14 +1232,15 @@
           <p class="note">💡 llmfit으로 내 PC 사양에 맞는 작은 모델을 추천받아 골랐습니다. 규칙을 분명히 줄수록 지어낸 답이 줄어듭니다.</p>
         </article>
         <label class="check"><input type="checkbox" data-check="day4" /> DAY 4 복습 완료</label>
+        <a class="next-day" href="#day5"><span>다음 · DAY 5</span>배운 것을 모아 말로 대화하는 데스크톱 AI 비서를 만들어 봅니다 →</a>
       </section>
 
       <!-- DAY 5 -->
       <section class="day" id="day5" data-day="5">
         <div class="day-head">
           <span class="day-label">DAY 5</span>
-          <h2>데스크톱 앱 만들기 (음성 · 카메라 · AI 자비스 · UI/UX)</h2>
-          <p>웹 기술로 데스크톱 앱을 만들고 <b>마이크 인식</b>(음성 → 글자)과 <b>카메라 인식</b>(영상 입력·캡처)을 연동하는 방법을 배우고, 이를 합쳐 음성으로 대화하는 <b>AI 비서 자비스</b>를 만드는 과정을 정리했습니다.</p>
+          <h2>데스크톱 앱 만들기 (UI/UX · 음성 · 카메라 · AI 자비스)</h2>
+          <p>지금까지 배운 것을 모아 <b>데스크톱 앱</b>으로 완성하는 날입니다. 디자인 도우미로 화면을 다듬고, <b>마이크·카메라</b>를 연결한 뒤, DAY 4의 LLM·에이전트를 두뇌로 붙여 말로 대화하는 <b>AI 비서 자비스</b>를 만듭니다.</p>
         </div>
 
         <h3>🎨 UI/UX 더 예쁘게 만들기</h3>
@@ -1367,6 +1420,7 @@
         <p class="note">🔐 마이크가 계속 켜져 있는 앱이므로, 듣는 중인지 화면에 항상 표시하고 대화 내용을 외부로 보내는 범위를 사용자에게 알려 주는 것이 좋습니다.</p>
 
         <label class="check"><input type="checkbox" data-check="day5" /> DAY 5 복습 완료</label>
+        <a class="next-day" href="#quiz"><span>다음 · QUIZ</span>일주일 동안 배운 개념을 O/X 퀴즈로 확인해 봅니다 →</a>
       </section>
 
       <!-- 퀴즈 -->
