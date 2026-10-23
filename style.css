@@ -336,7 +336,7 @@ main { flex: 1; min-width: 0; padding: 0 48px; max-width: 1100px; }
 }
 .timeline div:nth-child(even) { background: var(--surface-2); }
 .timeline b { display: block; color: var(--accent); font-size: 0.72rem; }
-.glossary + .flow, .card + .flow, .flow + .glossary { margin-top: 16px; }
+.glossary + .flow, .card + .flow, .flow + .glossary, .table-wrap + .glossary { margin-top: 16px; }
 .card + .glossary { margin-top: 16px; }
 
 /* 컨텍스트 막대 */
