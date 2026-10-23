@@ -30,7 +30,7 @@
         <li><a href="#day2" class="nav-link" title="배포 · Supabase · 결제 · MCP · 영상"><span class="badge">🚀</span>DAY 2</a></li>
         <li><a href="#day3" class="nav-link" title="스킬 생성"><span class="badge">🧩</span>DAY 3</a></li>
         <li><a href="#day4" class="nav-link" title="pandas · RAG · 로컬 LLM · 업스테이지 · 에이전트"><span class="badge">📊</span>DAY 4</a></li>
-        <li><a href="#day5" class="nav-link" title="데스크톱 앱 · AI 자비스"><span class="badge">🖥️</span>DAY 5</a></li>
+        <li><a href="#day5" class="nav-link" title="데스크톱 앱 · AI 자비스 · UI/UX"><span class="badge">🖥️</span>DAY 5</a></li>
         <li><a href="#quiz" class="nav-link" title="학습 확인 퀴즈"><span class="badge">✏️</span>QUIZ</a></li>
       </ul>
       <div class="progress-box">
@@ -50,7 +50,7 @@
           <a href="#day2" class="day-card"><span>DAY 2</span><strong>배포 · 결제</strong><em>Vercel · Supabase · Toss · MCP · 영상</em></a>
           <a href="#day3" class="day-card"><span>DAY 3</span><strong>Skills</strong><em>SKILL.md</em></a>
           <a href="#day4" class="day-card"><span>DAY 4</span><strong>RAG 챗봇</strong><em>pandas · 로컬 LLM · 업스테이지 · 에이전트</em></a>
-          <a href="#day5" class="day-card"><span>DAY 5</span><strong>Desktop App</strong><em>음성 · 카메라 · 자비스</em></a>
+          <a href="#day5" class="day-card"><span>DAY 5</span><strong>Desktop App</strong><em>음성 · 카메라 · 자비스 · UI/UX</em></a>
         </div>
       </section>
 
@@ -1186,8 +1186,28 @@
       <section class="day" id="day5" data-day="5">
         <div class="day-head">
           <span class="day-label">DAY 5</span>
-          <h2>데스크톱 앱 만들기 (음성 · 카메라 · AI 자비스)</h2>
+          <h2>데스크톱 앱 만들기 (음성 · 카메라 · AI 자비스 · UI/UX)</h2>
           <p>웹 기술로 데스크톱 앱을 만들고 <b>마이크 인식</b>(음성 → 글자)과 <b>카메라 인식</b>(영상 입력·캡처)을 연동하는 방법을 배우고, 이를 합쳐 음성으로 대화하는 <b>AI 비서 자비스</b>를 만드는 과정을 정리했습니다.</p>
+        </div>
+
+        <h3>🎨 UI/UX 더 예쁘게 만들기</h3>
+        <p class="note">앱을 보기 좋고 쓰기 편하게 만들려면, Claude Code에 디자인 도우미를 붙이면 됩니다. 앱을 만들 때 처음부터 함께 쓰면 좋습니다.</p>
+        <div class="grid-3">
+          <article class="card searchable">
+            <h4>⚡ SuperClaude</h4>
+            <p>Claude Code에 <b>미리 만든 명령어 묶음</b>을 설치해 주는 무료 도구입니다. <code>/sc:</code>로 시작하는 명령으로 아이디어 정리, 구현, 테스트 같은 일을 정해진 순서대로 진행합니다.</p>
+            <p class="prompt">/sc:brainstorm 자비스 앱 화면 구성</p>
+          </article>
+          <article class="card searchable">
+            <h4>🧑‍🎨 디자인 에이전트</h4>
+            <p>"UI 디자이너" 역할만 맡는 <b>도우미 AI</b>를 따로 만들어 두는 방법입니다. 디자인을 맡기면 이 에이전트가 화면만 집중해서 검토하고 고칩니다.</p>
+            <p class="prompt">"UI 디자이너 에이전트를 만들어 줘. 색·글자 크기·여백이 어색한 곳을 찾아 고치는 역할이야."</p>
+          </article>
+          <article class="card searchable">
+            <h4>🧩 UI/UX 스킬</h4>
+            <p>디자인 노하우가 담긴 스킬을 설치하는 방법입니다. 예를 들어 skills.sh의 <b>frontend-design</b> 스킬을 넣으면, 화면을 만들 때 그 디자인 원칙을 따라 줍니다.</p>
+            <p class="prompt">"frontend-design 스킬을 설치하고, 그 스킬로 자비스 화면을 다시 디자인해 줘."</p>
+          </article>
         </div>
 
         <h3>개념 먼저</h3>
