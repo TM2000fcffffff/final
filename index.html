@@ -29,7 +29,7 @@
         <li><a href="#day1" class="nav-link" title="Claude Code · 컨텍스트 · 화면 조작"><span class="badge">💬</span>DAY 1</a></li>
         <li><a href="#day2" class="nav-link" title="배포 · Supabase · 결제 · MCP · 영상"><span class="badge">🚀</span>DAY 2</a></li>
         <li><a href="#day3" class="nav-link" title="스킬 생성"><span class="badge">🧩</span>DAY 3</a></li>
-        <li><a href="#day4" class="nav-link" title="pandas · RAG 챗봇 · 에이전트"><span class="badge">📊</span>DAY 4</a></li>
+        <li><a href="#day4" class="nav-link" title="pandas · RAG · 로컬 LLM · 업스테이지 · 에이전트"><span class="badge">📊</span>DAY 4</a></li>
         <li><a href="#day5" class="nav-link" title="데스크톱 앱 · AI 자비스"><span class="badge">🖥️</span>DAY 5</a></li>
         <li><a href="#quiz" class="nav-link" title="학습 확인 퀴즈"><span class="badge">✏️</span>QUIZ</a></li>
       </ul>
@@ -49,7 +49,7 @@
           <a href="#day1" class="day-card"><span>DAY 1</span><strong>Claude Code</strong><em>컨텍스트 · Chrome · Computer Use</em></a>
           <a href="#day2" class="day-card"><span>DAY 2</span><strong>배포 · 결제</strong><em>Vercel · Supabase · Toss · MCP · 영상</em></a>
           <a href="#day3" class="day-card"><span>DAY 3</span><strong>Skills</strong><em>SKILL.md</em></a>
-          <a href="#day4" class="day-card"><span>DAY 4</span><strong>RAG 챗봇</strong><em>pandas · 에이전트</em></a>
+          <a href="#day4" class="day-card"><span>DAY 4</span><strong>RAG 챗봇</strong><em>pandas · 로컬 LLM · 업스테이지 · 에이전트</em></a>
           <a href="#day5" class="day-card"><span>DAY 5</span><strong>Desktop App</strong><em>음성 · 카메라 · 자비스</em></a>
         </div>
       </section>
@@ -414,31 +414,16 @@
           <article class="card searchable">
             <h4>MCP (Model Context Protocol)</h4>
             <p>AI 모델이 외부 도구·데이터에 접근하도록 연결하는 <b>표준 규격</b>입니다. "AI용 USB-C"라고 생각하면 쉽습니다.</p>
-            <ul>
-              <li><b>Host</b> — Claude Code, Claude Desktop 같은 앱</li>
-              <li><b>Client</b> — Host 안에서 서버와 1:1로 통신</li>
-              <li><b>Server</b> — 기능을 제공 (DB, GitHub, 브라우저 등)</li>
-            </ul>
-            <p>서버가 제공하는 것: <span class="pill">Tools</span><span class="pill">Resources</span><span class="pill">Prompts</span></p>
             <p class="prompt">"토스페이먼츠 연동 가이드 MCP를 이 프로젝트에 연결해 줘."</p>
             <p>연결된 서버 목록은 <code>/mcp</code>로 확인합니다.</p>
           </article>
           <article class="card searchable">
             <h4>실습에서 쓴 MCP 서버</h4>
             <ul>
-              <li><b>토스페이먼츠 연동 가이드</b> — 최신 결제 API 문서를 찾아 줌 (<code>get-v2-documents</code>)</li>
-              <li><b>Supabase</b> — 테이블 만들기·SQL 실행·함수 배포 (<code>apply_migration</code>, <code>execute_sql</code>, <code>deploy_edge_function</code>)</li>
+              <li><b>토스페이먼츠 연동 가이드</b> — 최신 결제 문서를 찾아 줌</li>
+              <li><b>Supabase</b> — 데이터베이스 만들기·관리</li>
               <li><b>Claude in Chrome / 내장 브라우저</b> — 화면 확인, 클릭, 스크린샷</li>
             </ul>
-            <p>프로젝트 폴더의 <code>.mcp.json</code>에 등록하면 그 폴더에서만 쓰입니다.</p>
-          </article>
-          <article class="card searchable">
-            <h4>MCP 연결 범위</h4>
-            <ul>
-              <li><b>이 프로젝트만</b> — 폴더의 <code>.mcp.json</code>에 기록, 팀원과 공유 가능</li>
-              <li><b>내 모든 프로젝트</b> — 사용자 설정에 기록</li>
-            </ul>
-            <p>MCP 서버 중 상당수는 Node.js로 실행되므로, Node.js가 설치돼 있지 않으면 연결되지 않을 수 있습니다.</p>
           </article>
         </div>
 
@@ -494,8 +479,6 @@
           <div class="term searchable"><b>Auth (인증)</b><p>회원가입·로그인 기능. 이메일, Google 로그인 등을 지원</p></div>
           <div class="term searchable"><b>RLS (행 단위 보안)</b><p>"자기 주문만 볼 수 있다" 같은 규칙을 DB에 직접 거는 것. 공개 키가 노출돼도 데이터를 지켜 줌</p></div>
           <div class="term searchable"><b>Edge Function</b><p>Supabase에서 돌아가는 작은 서버 코드. 결제 승인처럼 시크릿 키가 필요한 일을 맡김</p></div>
-          <div class="term searchable"><b>Realtime</b><p>DB가 바뀌면 다른 사람 화면에도 바로 반영되는 기능</p></div>
-          <div class="term searchable"><b>공개 키 vs 서비스 키</b><p>공개(publishable) 키는 브라우저에 넣어도 되고 RLS로 보호. 서비스 키는 모든 권한이라 서버에만</p></div>
         </div>
         <div class="flow">
           <div class="flow-step">🖥️<b>브라우저</b><small>공개 키</small></div>
@@ -561,8 +544,6 @@
           <div class="term searchable"><b>프레임 · fps</b><p>영상의 낱장 그림, 그리고 1초에 넘기는 장수. 60fps = 1초에 60장</p></div>
           <div class="term searchable"><b>캔버스(canvas)</b><p>웹 페이지 안의 도화지. 도형·글자·이미지를 코드로 그림</p></div>
           <div class="term searchable"><b>타임라인</b><p>"2초에 컷 전환, 4.4초에 휴대폰 등장"처럼 장면별 시각을 정한 시간표</p></div>
-          <div class="term searchable"><b>이징(easing)</b><p>움직임이 갑자기 멈추지 않고 부드럽게 빨라지고 느려지게 하는 효과</p></div>
-          <div class="term searchable"><b>인코딩</b><p>낱장 그림과 소리를 MP4 같은 영상 파일로 압축해 묶는 일</p></div>
         </div>
 
         <div class="flow">
@@ -630,6 +611,12 @@
             <div><span class="pill">Canvas</span><span class="pill">1080p 60fps</span><span class="pill">MP4</span></div>
           </div>
           <p>아래 기록장 앱을 소개하는 20초 영상을 웹 페이지 하나로 만들었습니다. 페이지에서 재생·구간 이동으로 확인하고, 버튼 하나로 MP4·썸네일·소리 파일을 내보냅니다.</p>
+          <div class="video-wrap">
+            <video controls playsinline preload="metadata" src="assets/promo.mp4#t=0.5" aria-label="그거 언제 했더라? 20초 홍보영상">
+              브라우저가 영상 재생을 지원하지 않습니다. <a class="link" href="assets/promo.mp4">영상 파일 받기</a>
+            </video>
+          </div>
+          <p class="note">🎬 실제로 만든 영상입니다 (1080p · 60fps · 약 20초 · 41MB). 재생 버튼을 누르면 불러옵니다.</p>
           <p class="sub-title">타임라인</p>
           <div class="timeline">
             <div style="flex:2"><b>0초</b>질문</div>
@@ -664,30 +651,22 @@
               <span class="project-path">d_2/tosspayments</span>
               <h4>LAYERED 의류 쇼핑몰</h4>
             </div>
-            <div><span class="pill">Toss Payments v2</span><span class="pill">Supabase</span><span class="pill">Edge Function</span></div>
+            <div><span class="pill">토스페이먼츠</span><span class="pill">Supabase</span></div>
           </div>
           <p>상의·신발·바지를 파는 쇼핑몰 데모입니다. 상품 구경 → 장바구니 → 회원가입 → 토스 결제 → 마이페이지에서 주문 확인·취소까지 이어집니다.</p>
           <div class="grid-3">
             <div class="mini">
-              <b>금액은 서버가 계산</b>
-              <p><code>create_order()</code>가 DB 가격으로 금액을 다시 계산합니다. 화면 금액과 다르면 결제를 멈춥니다. (50,000원 이상 무료배송)</p>
+              <b>금액은 서버가 확인</b>
+              <p>결제 전에 서버가 DB 가격으로 금액을 다시 확인해, 화면 금액을 조작해도 결제되지 않습니다.</p>
             </div>
             <div class="mini">
-              <b>시크릿 키는 Edge Function에만</b>
-              <p>승인·취소는 Edge Function <code>payments</code>가 토스 API를 호출합니다. 키는 Secrets의 <code>TOSS_SECRET_KEY</code>에 저장합니다.</p>
+              <b>시크릿 키는 서버에만</b>
+              <p>결제 승인·취소는 Supabase 서버에서 처리하고, 시크릿 키는 대시보드에 직접 넣었습니다.</p>
             </div>
             <div class="mini">
-              <b>재고와 주문 상태</b>
-              <p>승인 시작 시 재고를 차감하고, 실패·취소되면 재고를 되돌립니다.</p>
+              <b>재고 관리</b>
+              <p>결제하면 재고가 줄고, 결제가 실패·취소되면 재고가 다시 돌아옵니다.</p>
             </div>
-          </div>
-          <p class="sub-title">주문 상태 흐름</p>
-          <div class="states">
-            <span class="state">PENDING</span><span class="arrow">→</span>
-            <span class="state">CONFIRMING</span><span class="arrow">→</span>
-            <span class="state ok">PAID</span><span class="arrow">→</span>
-            <span class="state">CANCELED</span>
-            <span class="state-note">실패하면 어느 단계에서든 <span class="state bad">FAILED</span></span>
           </div>
         </article>
 
@@ -703,15 +682,15 @@
           <div class="grid-3">
             <div class="mini">
               <b>자동 배포</b>
-              <p><code>main</code>에 push 하면 Vercel에 자동 배포됩니다. <code>vercel.json</code>으로 CSP 같은 보안 헤더도 붙였습니다.</p>
+              <p><code>main</code>에 push 하면 Vercel에 자동으로 배포됩니다.</p>
             </div>
             <div class="mini">
-              <b>기기 + 클라우드 동기화</b>
-              <p>평소엔 <code>localStorage</code>에 저장하고, Google 로그인하면 Supabase와 동기화합니다. RLS로 자기 기록만 볼 수 있습니다.</p>
+              <b>기기 + 클라우드 저장</b>
+              <p>로그인하지 않으면 내 기기에만 저장하고, Google로 로그인하면 Supabase에 저장해 다른 기기에서도 볼 수 있습니다.</p>
             </div>
             <div class="mini">
               <b>그룹 집안일 룰렛</b>
-              <p>초대 링크로 그룹에 가입하고, 당첨자는 서버에서 뽑습니다. Realtime으로 다른 사람 화면에도 룰렛이 돕니다.</p>
+              <p>초대 링크로 가족·친구와 그룹을 만들고, 룰렛으로 집안일 당번을 정합니다. 다른 사람 화면에도 바로 같이 돕니다.</p>
             </div>
           </div>
         </article>
@@ -738,7 +717,6 @@
               <tr class="searchable"><td><b>CLAUDE.md</b></td><td>프로젝트 규칙·기억</td><td>세션마다 항상</td><td>모든 작업에 적용할 규칙</td></tr>
               <tr class="searchable"><td><b>스킬</b></td><td>특정 작업의 절차서 + 스크립트</td><td>요청이 설명과 맞을 때만</td><td>자주 반복하는 정해진 작업</td></tr>
               <tr class="searchable"><td><b>MCP</b></td><td>외부 도구 연결 통로</td><td>도구가 필요할 때</td><td>브라우저·DB·API 같은 바깥 기능</td></tr>
-              <tr class="searchable"><td><b>서브에이전트</b></td><td>따로 일하는 도우미 AI</td><td>일을 맡길 때</td><td>넓은 조사처럼 분리할 작업</td></tr>
             </tbody>
           </table>
         </div>
@@ -845,28 +823,19 @@
           </article>
         </div>
 
-        <div class="grid-2">
-          <article class="card searchable">
-            <h4>두 스킬의 공통 흐름</h4>
-            <div class="flow small">
-              <div class="flow-step">🌐<b>브라우저 수집</b><small>JS 주입 · 필터·정렬</small></div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-step">🧮<b>Node 스크립트</b><small>배열 수식 한 줄</small></div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-step">📊<b>구글 시트</b><small>입력 후 CSV로 검증</small></div>
-            </div>
-            <p>셀마다 타이핑하면 탭이 공백이 되고 한글 첫 글자가 사라져서, 표 전체를 <code>={...;...}</code> 수식 하나로 넣었습니다.</p>
-          </article>
-          <article class="card searchable tip">
-            <h4>💡 실제로 겪은 함정</h4>
-            <ul>
-              <li>시트 메뉴 검색에서 <kbd>Enter</kbd>를 누르면 셀에 줄바꿈이 저장됨 → 결과 항목을 클릭</li>
-              <li>셀 이동은 좌표 클릭 대신 이름 상자(<kbd>Ctrl</kbd>+<kbd>J</kbd>)</li>
-              <li>구글지도 목록은 JS 스크롤로는 더 불러오지 않음 → 실제 스크롤 사용</li>
-              <li>서식이 다 들어간 <b>템플릿 시트를 복사</b>해서 쓰면 빠르고 일정함</li>
-            </ul>
-          </article>
-        </div>
+        <h3>🌍 남이 만든 스킬 찾아 쓰기: skills.sh</h3>
+        <article class="card searchable">
+          <h4>스킬 앱스토어 같은 사이트</h4>
+          <p><a class="link" href="https://skills.sh" target="_blank" rel="noopener">skills.sh ↗</a>는 여러 사람과 회사가 만든 AI 에이전트용 스킬을 모아 둔 <b>스킬 디렉터리</b>입니다. 많이 설치된 순서로 순위(리더보드)를 보여 주고, 마음에 드는 스킬은 명령 한 줄로 내 프로젝트에 설치할 수 있습니다. Claude Code를 포함한 여러 AI 에이전트에서 쓸 수 있습니다.</p>
+          <ul>
+            <li><b>찾기</b> — 사이트에서 둘러보거나, 직접 만든 실습 예시의 <b>find-skills</b> 스킬로 "○○하는 스킬 있어?"라고 물어보기</li>
+            <li><b>설치</b> — 스킬 페이지에 있는 <code>npx skills add …</code> 명령을 실행하면 내 프로젝트에 스킬 폴더가 생김</li>
+            <li><b>사용</b> — 설치한 뒤에는 내가 만든 스킬처럼 <code>/스킬이름</code>이나 말로 요청해서 사용</li>
+          </ul>
+          <p class="prompt">"skills.sh에서 프론트엔드 디자인 관련 스킬을 찾아서 이 프로젝트에 설치해 줘."</p>
+          <p class="note">💡 남이 만든 스킬도 결국 내 PC에서 실행되는 지침과 코드입니다. 설치 전에 어떤 일을 하는 스킬인지, 믿을 만한 곳에서 만든 것인지 확인하세요.</p>
+        </article>
+
         <label class="check"><input type="checkbox" data-check="day3" /> DAY 3 복습 완료</label>
       </section>
 
@@ -874,8 +843,8 @@
       <section class="day" id="day4" data-day="4">
         <div class="day-head">
           <span class="day-label">DAY 4</span>
-          <h2>pandas · RAG 챗봇 · 에이전트</h2>
-          <p>pandas로 데이터를 다듬고, RAG로 내 데이터에 근거해 답하는 챗봇을 만드는 방법, 그리고 도구를 써서 스스로 일을 끝내는 <b>에이전트</b>의 개념을 배웠습니다.</p>
+          <h2>pandas · RAG 챗봇 · 로컬 LLM · 업스테이지 · 에이전트</h2>
+          <p>pandas로 데이터를 다듬고, RAG로 내 데이터에 근거해 답하는 챗봇을 만드는 방법, 내 PC에서 돌아가는 로컬 LLM과 업스테이지 API를 쓰는 방법, 그리고 도구를 써서 스스로 일을 끝내는 <b>에이전트</b>의 개념을 배웠습니다.</p>
         </div>
 
         <h3>개념 먼저</h3>
@@ -885,8 +854,6 @@
           <div class="term searchable"><b>LLM</b><p>대규모 언어 모델. 학습한 지식으로 글을 만들어 내지만, 내 문서 내용은 모름</p></div>
           <div class="term searchable"><b>청크(Chunk)</b><p>긴 문서를 검색하기 좋게 잘게 자른 조각. 앞뒤를 조금 겹쳐 문맥이 끊기지 않게 함</p></div>
           <div class="term searchable"><b>임베딩</b><p>문장을 "의미"를 담은 숫자 목록(벡터)으로 바꾸는 것. 뜻이 비슷하면 숫자도 가까움</p></div>
-          <div class="term searchable"><b>벡터 DB</b><p>임베딩을 저장해 두고, 질문과 가장 가까운 조각을 빠르게 찾아 주는 저장소</p></div>
-          <div class="term searchable"><b>유사도 · Top-K</b><p>질문과 조각이 얼마나 비슷한지 점수(코사인 유사도)를 매겨 상위 K개를 고름</p></div>
           <div class="term searchable"><b>로컬 LLM</b><p>Ollama 등으로 내 PC에서 직접 돌리는 모델. 인터넷·비용 없이 쓰지만 PC 사양에 맞춰 골라야 함</p></div>
         </div>
 
@@ -968,8 +935,8 @@
             <span class="step-num">2</span>
             <div>
               <b>문서와 규칙을 정해 주기</b>
-              <p>어떤 문서로, 어떻게 자르고, 몇 개를 찾을지 숫자로 정해 주면 결과가 안정적입니다.</p>
-              <p class="prompt">"data의 법령 원문으로 RAG 챗봇을 만들어 줘. 청크는 500자에 15% 겹치게, 검색은 코사인 유사도 Top-5. 답변엔 근거 조문을 꼭 표시해."</p>
+              <p>어떤 문서를 쓸지, 답변을 어떻게 보여 줄지만 말하면 됩니다.</p>
+              <p class="prompt">"data 폴더의 법령 원문으로 RAG 챗봇을 만들어 줘. 답변엔 근거가 된 조문을 꼭 표시해 줘."</p>
             </div>
           </li>
           <li class="step searchable">
@@ -985,6 +952,116 @@
               <b>질문으로 검증</b>
               <p>정답을 아는 질문으로 시험해 보고, 엉뚱하거나 같은 말을 반복하면 프롬프트·설정을 고치게 합니다.</p>
               <p class="prompt">"'거주자의 정의'를 물어보고 답이 제1조의2와 맞는지 확인해 줘. 반복이 생기면 막아 줘."</p>
+            </div>
+          </li>
+        </ol>
+
+        <h3>💻 로컬 LLM 만들기</h3>
+        <article class="card searchable">
+          <h4>인터넷 없이 내 PC에서 돌아가는 AI</h4>
+          <p>ChatGPT·Claude 같은 AI는 회사 서버에서 돌아가서 인터넷과 비용이 필요합니다. <b>로컬 LLM</b>은 공개된 모델을 내려받아 <b>내 PC에서 직접 실행</b>합니다. 대화 내용이 밖으로 나가지 않아 보안이 중요한 자료에 쓰기 좋지만, PC 사양에 맞는 크기의 모델을 골라야 합니다.</p>
+        </article>
+        <div class="glossary">
+          <div class="term searchable"><b>Ollama</b><p>공개 모델을 명령 한 줄로 내려받아 내 PC에서 실행해 주는 프로그램</p></div>
+          <div class="term searchable"><b>모델 크기 (1.5b, 7b…)</b><p>b는 10억 개의 매개변수. 클수록 똑똑하지만 메모리(RAM)를 더 많이 씀</p></div>
+          <div class="term searchable"><b>llmfit</b><p>내 PC 사양(CPU·RAM·그래픽)을 보고 돌릴 수 있는 모델을 점수로 추천해 주는 도구</p></div>
+        </div>
+        <div class="flow">
+          <div class="flow-step">🔍<b>사양 확인</b><small>llmfit 추천</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">⬇️<b>모델 받기</b><small>Ollama</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">💬<b>대화 테스트</b><small>속도 · 품질</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">🔗<b>앱에 연결</b><small>RAG · 챗봇 화면</small></div>
+        </div>
+
+        <h3>🤖 Claude Code로 로컬 LLM 만들기</h3>
+        <ol class="steps">
+          <li class="step searchable">
+            <span class="step-num">1</span>
+            <div>
+              <b>내 PC에 맞는 모델 고르기</b>
+              <p class="prompt">"llmfit으로 내 PC 사양을 확인하고, Ollama로 돌릴 수 있는 대화 모델과 한국어 임베딩 모델을 추천해 줘."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">2</span>
+            <div>
+              <b>설치하고 내려받기</b>
+              <p>Ollama 프로그램 설치는 사람이 하고, 모델 내려받기와 실행 확인은 맡길 수 있습니다.</p>
+              <p class="prompt">"추천한 모델을 Ollama로 내려받고, 한국어로 간단히 대화해서 잘 동작하는지 확인해 줘."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">3</span>
+            <div>
+              <b>내 앱에 연결하기</b>
+              <p class="prompt">"이 로컬 모델로 RAG 챗봇을 만들어 줘. 인터넷 없이 동작해야 해."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">4</span>
+            <div>
+              <b>느리거나 이상하면 조정</b>
+              <p class="prompt">"답변이 너무 느리고 같은 말을 반복해. 답변 길이를 줄이고 반복을 막아 줘."</p>
+            </div>
+          </li>
+        </ol>
+        <p class="note">👉 아래 <b>소득세법 RAG 챗봇</b> 예시가 로컬 LLM(qwen2.5:1.5b + bge-m3)으로 만든 실습입니다.</p>
+
+        <h3>🇰🇷 업스테이지(Upstage) 활용하기</h3>
+        <article class="card searchable">
+          <h4>한국 AI 회사의 LLM과 문서 처리 API</h4>
+          <p><b>업스테이지</b>는 한국 AI 회사로, 한국어에 강한 LLM <b>Solar</b>와 PDF·이미지 문서를 읽어 내는 <b>Document AI</b>를 API로 제공합니다. 로컬 LLM과 달리 인터넷으로 업스테이지 서버를 호출하는 방식이라 PC 사양에 상관없이 큰 모델을 쓸 수 있습니다.</p>
+        </article>
+        <div class="glossary">
+          <div class="term searchable"><b>Solar LLM</b><p>업스테이지의 대화·글쓰기 모델. 한국어 이해와 답변 품질이 좋음</p></div>
+          <div class="term searchable"><b>Document Parse</b><p>PDF·스캔 이미지의 글, 표, 제목 구조를 읽어 텍스트로 바꿔 줌. RAG 문서 준비에 유용</p></div>
+          <div class="term searchable"><b>API 키</b><p>업스테이지 콘솔에서 발급. 코드나 채팅에 넣지 않고 환경 변수(.env)에 저장</p></div>
+        </div>
+
+        <div class="table-wrap compare">
+          <table class="cmd-table">
+            <thead><tr><th>구분</th><th>로컬 LLM (Ollama)</th><th>업스테이지 API</th></tr></thead>
+            <tbody>
+              <tr class="searchable"><td><b>실행 위치</b></td><td>내 PC</td><td>업스테이지 서버</td></tr>
+              <tr class="searchable"><td><b>인터넷</b></td><td>필요 없음</td><td>필요</td></tr>
+              <tr class="searchable"><td><b>비용</b></td><td>무료 (내 PC 전기만)</td><td>사용량만큼 과금</td></tr>
+              <tr class="searchable"><td><b>성능</b></td><td>PC 사양에 따라 작은 모델로 제한</td><td>큰 모델을 빠르게 사용</td></tr>
+              <tr class="searchable"><td><b>보안</b></td><td>자료가 밖으로 나가지 않음</td><td>자료가 외부 서버로 전송됨</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>🤖 Claude Code로 업스테이지 연결하기</h3>
+        <ol class="steps">
+          <li class="step searchable">
+            <span class="step-num">1</span>
+            <div>
+              <b>API 키 발급 (사람이 직접)</b>
+              <p>업스테이지 콘솔에 가입해 API 키를 발급받고, 프로젝트의 <code>.env</code> 파일에 직접 넣습니다. 채팅창에는 붙여 넣지 않습니다.</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">2</span>
+            <div>
+              <b>문서를 텍스트로 바꾸기</b>
+              <p class="prompt">"data 폴더의 PDF를 업스테이지 Document Parse로 읽어서, 표와 제목 구조가 살아 있는 텍스트로 저장해 줘. API 키는 .env에서 읽어."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">3</span>
+            <div>
+              <b>Solar로 RAG 챗봇 만들기</b>
+              <p class="prompt">"변환한 문서로 RAG 챗봇을 만들어 줘. 임베딩과 답변 생성은 업스테이지 Solar를 쓰고, 근거 문단을 함께 보여 줘."</p>
+            </div>
+          </li>
+          <li class="step searchable">
+            <span class="step-num">4</span>
+            <div>
+              <b>로컬 LLM과 비교해 보기</b>
+              <p class="prompt">"같은 질문 5개를 로컬 모델과 Solar에 각각 물어보고, 정확도와 속도를 표로 비교해 줘."</p>
             </div>
           </li>
         </ol>
@@ -1012,7 +1089,6 @@
           <div class="term searchable"><b>도구 (손발)</b><p>검색, 계산기, 파일 읽기, API 호출처럼 모델이 불러 쓰는 기능</p></div>
           <div class="term searchable"><b>메모리</b><p>지금까지 한 일과 결과를 기억하는 공간 (컨텍스트·저장소)</p></div>
           <div class="term searchable"><b>루프</b><p>생각 → 행동 → 관찰을 목표를 이룰 때까지 되풀이하는 구조</p></div>
-          <div class="term searchable"><b>도구 호출</b><p>모델이 "이 도구를 이 값으로 실행해 줘"라고 요청하면 프로그램이 실행해 결과를 돌려주는 방식</p></div>
         </div>
 
         <div class="table-wrap compare">
@@ -1094,35 +1170,14 @@
             </div>
             <div><span class="pill">LangChain</span><span class="pill">Ollama</span><span class="pill">Streamlit</span></div>
           </div>
-          <p>국가법령정보센터의 「소득세법」 원문을 바탕으로, 인터넷 없이 내 PC에서 돌아가는 법령 상담 챗봇입니다. 답변마다 근거 조문과 유사도 점수를 함께 보여 줍니다.</p>
-          <div class="kv">
-            <div><span>LLM</span><b>qwen2.5:1.5b</b><small>llmfit 추천 1위</small></div>
-            <div><span>임베딩</span><b>bge-m3</b><small>한국어 지원 다국어 모델</small></div>
-            <div><span>청크</span><b>500자</b><small>앞뒤 75자(15%) 중복</small></div>
-            <div><span>검색</span><b>Top-5</b><small>코사인 유사도</small></div>
-          </div>
-          <div class="grid-2">
-            <div>
-              <p class="sub-title">파일 구성</p>
-              <ul class="files">
-                <li><code>config.py</code> 모델·청크·경로 설정</li>
-                <li><code>ingest.py</code> 원문 파싱 → 청크 → 임베딩 → 인덱스 저장</li>
-                <li><code>rag.py</code> 검색 + 답변 생성</li>
-                <li><code>app.py</code> Streamlit 화면</li>
-              </ul>
-            </div>
-            <div>
-              <p class="sub-title">챗봇에게 준 규칙 (시스템 프롬프트)</p>
-              <ul>
-                <li>반드시 검색된 [참고 조문]에 근거해서만 답할 것</li>
-                <li>근거가 된 조문 번호를 꼭 밝힐 것</li>
-                <li>조문에서 찾을 수 없으면 "확인할 수 없습니다"라고 답할 것</li>
-                <li>같은 문장을 반복하지 말 것</li>
-              </ul>
-              <p>규칙을 분명히 줄수록 지어낸 답이 줄어듭니다.</p>
-            </div>
-          </div>
-          <p class="note">💡 <b>llmfit</b>으로 내 PC 사양(RAM 7.8GB, 내장 그래픽)에서 돌릴 수 있는 모델을 추천받아 골랐습니다. 답변이 같은 말을 반복하면 <code>repeat_penalty</code>와 최대 토큰 수로 끊습니다.</p>
+          <p>국가법령정보센터의 「소득세법」 원문을 바탕으로, 인터넷 없이 내 PC에서 돌아가는 법령 상담 챗봇입니다. 답변마다 근거가 된 조문을 함께 보여 줍니다.</p>
+          <p class="sub-title">챗봇에게 준 규칙</p>
+          <ul>
+            <li>반드시 찾아온 조문에 근거해서만 답할 것</li>
+            <li>근거가 된 조문 번호를 꼭 밝힐 것</li>
+            <li>조문에서 찾을 수 없으면 "확인할 수 없습니다"라고 답할 것</li>
+          </ul>
+          <p class="note">💡 llmfit으로 내 PC 사양에 맞는 작은 모델을 추천받아 골랐습니다. 규칙을 분명히 줄수록 지어낸 답이 줄어듭니다.</p>
         </article>
         <label class="check"><input type="checkbox" data-check="day4" /> DAY 4 복습 완료</label>
       </section>
@@ -1138,16 +1193,12 @@
         <h3>개념 먼저</h3>
         <div class="glossary">
           <div class="term searchable"><b>Electron</b><p>HTML/CSS/JS로 Windows·Mac용 데스크톱 앱을 만드는 도구. VS Code, Slack도 Electron으로 만듦</p></div>
-          <div class="term searchable"><b>메인 프로세스</b><p><code>main.js</code>. 창을 만들고 닫는 등 앱 전체를 관리하는 쪽</p></div>
-          <div class="term searchable"><b>렌더러 프로세스</b><p>창 안에 보이는 웹 화면(<code>index.html</code>). 카메라·마이크 코드는 주로 여기서 실행</p></div>
-          <div class="term searchable"><b>preload</b><p>화면과 PC 기능 사이의 안전한 다리. 필요한 기능만 골라 화면에 열어 줌</p></div>
-          <div class="term searchable"><b>미디어 스트림</b><p>카메라·마이크에서 실시간으로 들어오는 영상·소리 데이터 (<code>getUserMedia</code>)</p></div>
           <div class="term searchable"><b>STT / TTS</b><p>STT = 음성 → 글자(마이크 인식), TTS = 글자 → 음성(읽어 주기)</p></div>
         </div>
 
         <h3>앱 동작 흐름</h3>
         <div class="flow">
-          <div class="flow-step">🖥️<b>앱 실행</b><small>main.js 창 생성</small></div>
+          <div class="flow-step">🖥️<b>앱 실행</b><small>앱 창 열기</small></div>
           <div class="flow-arrow">→</div>
           <div class="flow-step">🔐<b>권한 요청</b><small>마이크 · 카메라</small></div>
           <div class="flow-arrow">→</div>
@@ -1159,15 +1210,6 @@
         </div>
 
         <div class="grid-2">
-          <article class="card searchable">
-            <h4>앱은 세 부분으로 나뉨</h4>
-            <ul>
-              <li><b>메인</b> (<code>main.js</code>) — 창을 열고, 카메라·마이크 권한을 허락할지 정함</li>
-              <li><b>화면</b> (<code>index.html</code>) — 버튼, 영상, 인식 결과가 보이는 곳</li>
-              <li><b>다리</b> (<code>preload.js</code>) — 화면이 PC 기능을 쓸 때 필요한 것만 안전하게 연결</li>
-            </ul>
-            <p>웹 페이지를 앱 창에 담았다고 생각하면 쉽습니다.</p>
-          </article>
           <article class="card searchable">
             <h4>🎙️ 마이크 인식은 이렇게</h4>
             <ol>
@@ -1200,7 +1242,7 @@
             <span class="step-num">1</span>
             <div>
               <b>기본 뼈대 만들기</b>
-              <p class="prompt">"Electron으로 빈 데스크톱 앱 기본 구조를 만들어 줘. main.js, preload.js, index.html로 나누고 npm start로 실행되게 해 줘."</p>
+              <p class="prompt">"Electron으로 빈 데스크톱 앱을 만들어 줘. 실행하면 창이 하나 뜨게 해 줘."</p>
             </div>
           </li>
           <li class="step searchable">
@@ -1312,7 +1354,7 @@
         <div class="day-head">
           <span class="day-label">QUIZ</span>
           <h2>학습 확인 퀴즈</h2>
-          <p>일주일 동안 배운 기본 개념을 O/X 15문제로 가볍게 확인해 보세요. 모든 문제에 답한 뒤 <b>채점하기</b>를 누르면 정답률과 코멘트, 해설을 볼 수 있습니다.</p>
+          <p>일주일 동안 배운 기본 개념을 O/X 17문제로 가볍게 확인해 보세요. 모든 문제에 답한 뒤 <b>채점하기</b>를 누르면 정답률과 코멘트, 해설을 볼 수 있습니다.</p>
         </div>
         <form id="quizForm" class="quiz"></form>
         <div class="quiz-actions">
